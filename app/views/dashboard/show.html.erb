@@ -1,0 +1,49 @@
+<script>
+  function addBulletPoint() {
+    var msg_input = document.textform.note_text;
+    var insert_pos = msg_input.selectionStart;
+    var old_text = msg_input.value;
+    msg_input.value = old_text.substr(0,insert_pos) + '\n+ ' + old_text.substr(insert_pos);
+    msg_input.focus();
+  }
+
+  function clearTextArea() {
+    var msg_input = document.textform.note_text;
+    msg_input.value = "";
+    msg_input.focus();
+  }
+
+  function showNoteSection() {
+    var elt = document.getElementById("note_section");
+    if (elt.style.display === "none") {
+        elt.style.display = "block";
+    }
+  }
+</script>
+
+<h2>DASHBOARD</h2>
+
+<br/>
+<div>
+  <button id="new_note_btn" onclick="showNoteSection();" class="left_element">Create Note</button>
+  <form class="button_to" method="get" action="/login/destroy"><input type="submit" value="Logout" /></form>
+</div>
+<br/><br/>
+
+<div>
+  <div id="notes_summary_div">
+  </div>
+  <div id="note_text_div">
+    <div id="note_section" style="display: none">
+      <button onclick="addBulletPoint(1, 2);">Insert Bulletpoint</button>
+      <form name="textform" action="/user/save_note" method="post">
+        <fieldset>
+          <textarea name="note_text" rows="10" cols="50"></textarea><br>
+        <input type="submit" value="Save Note">
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br/>

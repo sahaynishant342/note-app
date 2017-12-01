@@ -1,0 +1,26 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#notes_summary_div {
+  width: 20%;
+  height: 300px; // TODO: remove hard-coding
+  border: 1px solid black;
+  float: left
+}
+
+#note_text_div {
+  width: 80%;
+  background-color: lightgray;
+  height: 300px; // TODO: remove hard-coding
+  border: 1px solid black;
+  float: right
+}
+
+.left_element {
+  float: left;
+}
+
+//.right_element {
+//  float: right;
+//}
